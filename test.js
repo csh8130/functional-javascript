@@ -112,3 +112,14 @@ console.log(a);
 //array like 객체를 array로 변환
 var slice = Array.prototype.slice;
 console.log(slice.call(a, 1));
+
+var f1 = _pipe(
+  function(a) {
+    return a + 1;
+  },
+  function(a) {
+    return a + 2;
+  }
+);
+
+console.log(f1(1));
