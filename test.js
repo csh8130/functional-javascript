@@ -94,3 +94,21 @@ console.log(
     _get("age")
   )
 );
+
+console.clear();
+
+function add(a, b) {
+  return a + b;
+}
+
+console.log(_reduce([1, 2, 3], add, 0));
+
+console.log(_reduce([1, 2, 3], add));
+
+var a = document.querySelectorAll("*");
+console.log(a);
+//a.slice(1); //error
+
+//array like 객체를 array로 변환
+var slice = Array.prototype.slice;
+console.log(slice.call(a, 1));

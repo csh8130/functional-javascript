@@ -57,3 +57,14 @@ function _curryr(fn) {
 var _get = _curryr(function(obj, key) {
   return obj == null ? undefined : obj[key];
 });
+
+function _reduce(list, iter, memo) {
+  if (arguments.length == 2) {
+    memo = list[0];
+    list = list.slice(1);
+  }
+  _each(list, function(val) {
+    memo = iter(memo, val);
+  });
+  return memo;
+}
