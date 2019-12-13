@@ -123,3 +123,29 @@ var f1 = _pipe(
 );
 
 console.log(f1(1));
+
+console.clear();
+
+// console.log(
+//   _go_error(
+//     1,
+//     function(a) {
+//       return a + 1;
+//     },
+//     function(a) {
+//       return a + 2;
+//     }
+//   )
+// );
+
+console.log(
+  _go(
+    1,
+    function(a) {
+      return a + 1;
+    },
+    function(a) {
+      return a + 2;
+    }
+  )
+);

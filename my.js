@@ -86,3 +86,17 @@ function _pipe() {
     );
   };
 }
+
+//fns 배열일때 작동 제대로 안함 .apply 필요
+function _go_error(arg) {
+  //console.log(arguments);
+  var fns = _rest(arguments);
+  //console.log(fns);
+  return _pipe(fns)(arg);
+  //return _pipe(fns[0])(arg);
+}
+
+function _go(arg) {
+  var fns = _rest(arguments);
+  return _pipe.apply(null, fns)(arg);
+}
