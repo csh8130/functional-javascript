@@ -149,3 +149,29 @@ console.log(
     }
   )
 );
+
+console.clear();
+
+//--------users에 go 적용 전
+// console.log(
+//   _map(
+//     _filter(users, function(user) {
+//       return user.age >= 30;
+//     }),
+//     _get("name")
+//   )
+// );
+
+//--------users에 go 적용
+_go(
+  users,
+  function(users) {
+    return _filter(users, function(user) {
+      return user.age >= 30;
+    });
+  },
+  function(users) {
+    return _map(users, _get("name"));
+  },
+  console.log
+);
