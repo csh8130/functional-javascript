@@ -165,9 +165,7 @@ console.clear();
 //--------users에 go 적용
 _go(
   users,
-  _filter(function(user) {
-    return user.age >= 30;
-  }),
+  _filter(user => user.age >= 30),
   _map(_get("name")),
   console.log
 );
