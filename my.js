@@ -35,8 +35,9 @@ var _get = _curryr(function(obj, key) {
 var _length = _get("length");
 
 function _each(list, iter) {
-  for (var i = 0, len = _length(list); i < len; i++) {
-    iter(list[i]);
+  var keys = _keys(list);
+  for (var i = 0, len = keys.length; i < len; i++) {
+    iter(list[keys[i]]);
   }
   return list;
 }
@@ -103,4 +104,12 @@ function _go_error(arg) {
 function _go(arg) {
   var fns = _rest(arguments);
   return _pipe.apply(null, fns)(arg);
+}
+
+function _is_object(obj) {
+  return typeof obj == "object" && !!obj;
+}
+
+function _keys(obj) {
+  return _is_object(obj) ? Object.keys(obj) : [];
 }
