@@ -163,9 +163,19 @@ console.clear();
 // );
 
 //--------users에 go 적용
+// _go(
+//   users,
+//   _filter(user => user.age >= 30),
+//   _map(_get("name")),
+//   console.log
+// );
+
+// _each 외부 다형성 높이기
+_each(null, console.log);
+_each(users, console.log);
 _go(
-  users,
-  _filter(user => user.age >= 30),
-  _map(_get("name")),
+  null,
+  _filter(v => v),
+  _map(v => v),
   console.log
 );
